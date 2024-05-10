@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>LLM_with_RAG</title>
+
+    <style>
+        .large-response {
+            width: 80%;
+            height: 400px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 20px auto;
+            overflow-y: auto;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+ <div class="login">
+	<h1>Ask a question about given URL or PDF</h1>
+
+<!--     To be able to process file [enctype="multipart/form-data"] is needed.-->
+<!--     Optional fields don't have required parameter-->
+<!--     Anything important is only where input blokcs are-->
+    <form action="{{ url_for('RAG_test')}}"method="post" enctype="multipart/form-data">
+    	<input type="text" name="urls" placeholder="Enter URLs here" />
+        <input type="file" name="pdf" accept=".pdf" placeholder="Upload PDF file here" />
+        <input type="text" name="question" placeholder="Enter your question here" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Submit a question</button>
+    </form>
+
+   <br>
+
+ </div>
+ <div class="large-response">
+    {{ prediction_text | safe }}
+ </div>
+
+</body>
+</html>
