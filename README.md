@@ -10,7 +10,7 @@ It wasn't easy to find a free reliable tutorial on this topic, especially when I
 2. Go to https://ollama.com/models, and find the name of a model you want to try, and which your hardware will be able to handle. "mistral" 7b or "llama3" are always a good deafault bets. "mwiewior/bielik" for polish language only.
 3. Download a model by openning command line and typing: Ollama pull mistral. Or swap mistral for a model name of your choice.
 4. Install needed packages.
-
+<br><br>
 **querying URL with/without RAG:**
 
 5a. Just follow the code.
