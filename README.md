@@ -15,13 +15,13 @@ It wasn't easy to find a free reliable tutorial on this topic, especially when I
 **Querying URL with/without RAG:**\
 &emsp;5a. Just follow the code.
 
-**Querying PDF:**
+**Querying PDF:**\
 &emsp;5b. Just follow the code. Put pdf file in your project folder, or supply adequate path to it for PyPDFLoader.
 
-**Using Gradio:**
+**Using Gradio:**\
 &emsp;5c. Just follow the code. Run the code, and put http://127.0.0.1:7860 in browser to test it locally, or add in .launch(share=True) to share the generated link with others.
 
-**Using Flask:**
+**Using Flask:**\
 &emsp;5d. Create in your project folder, a folder for temporarily storing PDFs.
 &emsp;6. Create in your project folder, a folder named templates.
 &emsp;7. In templates folder create a file named index3.html and setup everything there or just download mine. A few hints about customizations are even there.
