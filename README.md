@@ -12,7 +12,7 @@ It wasn't easy to find a free reliable tutorial on this topic, especially when I
 4. Install needed packages.
 <br><br>
 
-**querying URL with/without RAG:**
+**querying URL with/without RAG:**\
 5a. Just follow the code.
 
 **querying PDF:**
