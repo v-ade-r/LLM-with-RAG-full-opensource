@@ -57,6 +57,7 @@ gr.Interface(
     title='LLM with RAG and Ollama, demo',
     description="Enter URLs or upload PDF file and ask a question to query the documents."
 ).launch()
+#).launch(share=True)
 
 
 
