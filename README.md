@@ -13,7 +13,7 @@ It wasn't easy to find a free reliable tutorial on this topic, especially when I
 <br><br>
 
 **Querying URL with/without RAG:**\
-  5a. Just follow the code.
+&ensp;5a. Just follow the code.
 
 **Querying PDF:**
   5b. Just follow the code. Put pdf file in your project folder, or supply adequate path to it for PyPDFLoader.
