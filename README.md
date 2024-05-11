@@ -2,8 +2,7 @@
 
 This code enables you to utilize opensource LLMs locally with the RAG function. You can feed the LLM model with the data from a URL or PDF, resulting in improved answers as the LLM's inference is mostly based on the supplied data.
 
-It wasn't easy to find a free reliable tutorial on this topic, especially when I wanted to use only opensource and run it locally, so that's why I decided to share this code. Finally, I found a super effective sollution here: https://www.youtube.com/watch?v=jENqvjpkwmw&list=LL&index=3. My code is essentially the same at its core. However, I made some small tweaks here and there, modified the Gradio part a bit, and added the Flask part.
-
+It wasn't easy to find a free reliable tutorial on this topic, especially when I wanted to use only opensource and run it locally, so that's why I decided to share this code. Finally, I found a super effective sollution here: https://www.youtube.com/watch?v=jENqvjpkwmw&list=LL&index=3. My code is essentially the same at its core. However, I made some small tweaks here and there, modified the Gradio part a bit, and added the Flask part. <br>
 
 **General step by step tutorial:**
 1. Download Ollama (Ollama allows you to run open-source large language models locally) from https://ollama.com/, and install it.
