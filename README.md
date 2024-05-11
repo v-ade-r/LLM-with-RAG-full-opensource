@@ -31,4 +31,4 @@ It wasn't easy to find a free reliable tutorial on this topic, especially when I
 **Problems to solve in the future:**
  - It's very slow for big PDF files (around few minutes)
  - It doesn't handle well PDFs with a lot of tables, pictures and strange objects.
- - After few questing usually the restart is needed.
+ - After few questions usually the restart is needed.
