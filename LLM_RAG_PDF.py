@@ -16,7 +16,19 @@ model = ChatOllama(model='mistral')
 # 1. Splitting into chunks data from PDF
 # ----------------------------------------------------------------------------------------------------------------------
 loader = PyPDFLoader("Polish_energy_security_in_the_oil_sector.pdf")
-docs_split = loader.load_and_split()
+# # Default load_and_split - Recursive splitter but with unknown parameters
+# docs_split = loader.load_and_split()
+
+# # Recursive Splitter - 1000/200 good for finding detailed info, but then almost as slow as Semantic.
+# # For more general questions, larger chunk_size needed
+# text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+# docs_split = loader.load_and_split(text_splitter)
+
+# Semantic Chunking - painfully slow (it took more than 12min for 100 pages PDF), but usually very accurate
+docs_split = loader.load()
+hf_embeddings = HuggingFaceEmbeddings()
+text_splitter = SemanticChunker(hf_embeddings, breakpoint_threshold_type="standard_deviation")
+docs_split = text_splitter.split_documents(docs_split)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # 2. Converting documents to Embeddings and storing them
