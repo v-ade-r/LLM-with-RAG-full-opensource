@@ -4,8 +4,10 @@ from langchain_community.chat_models import ChatOllama
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.text_splitter import CharacterTextSplitter
 from langchain_community.embeddings.ollama import OllamaEmbeddings
+from langchain_experimental.text_splitter import SemanticChunker
+from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain.text_splitter import CharacterTextSplitter
 
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -23,7 +25,14 @@ urls = [
 
 docs = [WebBaseLoader(url).load() for url in urls]
 docs_list = [item for sublist in docs for item in sublist]
-text_splitter = CharacterTextSplitter.from_tiktoken_encoder(chunk_size=7500, chunk_overlap=100)
+
+# #Character Chunking - fast and usually good enough
+# text_splitter = CharacterTextSplitter.from_tiktoken_encoder(chunk_size=7500, chunk_overlap=100)
+# docs_split = text_splitter.split_documents(docs_list)
+
+# Semantic Chunking - for most articles, fast enough, I believe the quality justifies time consumption
+hf_embeddings = HuggingFaceEmbeddings()
+text_splitter = SemanticChunker(hf_embeddings, breakpoint_threshold_type="percentile")
 docs_split = text_splitter.split_documents(docs_list)
 
 # ----------------------------------------------------------------------------------------------------------------------
