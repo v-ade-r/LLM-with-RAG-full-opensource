@@ -27,7 +27,7 @@ loader = PyPDFLoader("Polish_energy_security_in_the_oil_sector.pdf")
 # Semantic Chunking - painfully slow (it took more than 12min for 100 pages PDF), but usually very accurate
 docs_split = loader.load()
 hf_embeddings = HuggingFaceEmbeddings()
-text_splitter = SemanticChunker(hf_embeddings, breakpoint_threshold_type="standard_deviation")
+text_splitter = SemanticChunker(hf_embeddings, breakpoint_threshold_type="standard_deviation") # "percentile", "interquartile"
 docs_split = text_splitter.split_documents(docs_split)
 
 # ----------------------------------------------------------------------------------------------------------------------
